@@ -1,0 +1,40 @@
+<div class="form">
+  <input
+    type="text"
+    #titre
+    [(ngModel)]="newLivre.titre"
+    placeholder="Titre du livre"
+    class="form-control mb-3"
+  />
+  <input
+    type="text"
+    #auteur
+    placeholder="Auteur du livre"
+    [(ngModel)]="newLivre.auteur"
+    class="form-control mb-3"
+  />
+  <input
+    type="text"
+    #genre
+    placeholder="Genre du livre"
+    [(ngModel)]="newLivre.genre"
+    class="form-control mb-3"
+  />
+  <input
+    type="nmuber"
+    #publicationyear
+    placeholder="Année de publication du livre"
+    [(ngModel)]="newLivre.publicationYear"
+    class="form-control mb-3"
+  />
+
+  <input type="file" class="form-control mb-3" (change)="addImage($event)" />
+  <button
+    class="btn btn-outline-primary"
+    (click)="
+      addLivre(titre.value, auteur.value, genre.value, publicationyear.value)
+    "
+  >
+    Ajouter un Livre
+  </button>
+</div>

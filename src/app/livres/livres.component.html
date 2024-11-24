@@ -1,0 +1,28 @@
+<app-livre (addLivreEmitter)="addLivre($event)"></app-livre>
+<div class="livres">
+  <div *ngFor="let book of livres_list" class="livre card">
+    <div class="card-header">
+      <img
+        *ngIf="book.image != ''; else noimage"
+        src="{{ book.image }}"
+        class="card-img-top"
+        id="img"
+      />
+      <ng-template #noimage>
+        <img src="/logo.jpg" id="img" class="card-img-top" />
+      </ng-template>
+    </div>
+
+    <div class="card-body">
+      <h2 style="text-align: center">{{ book.titre }}</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Auteur: {{ book.auteur }}</li>
+        <li class="list-group-item">Genre: {{ book.genre }}</li>
+        <li class="list-group-item">Statut: {{ book.statut }}</li>
+      </ul>
+      <div class="card-footer">
+        <button class="btn btn-outline-info">Emprunté</button>
+      </div>
+    </div>
+  </div>
+</div>

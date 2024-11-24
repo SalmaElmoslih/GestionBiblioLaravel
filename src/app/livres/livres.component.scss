@@ -1,0 +1,17 @@
+#img{
+    width:100px;
+    height: 120px;;
+    border-radius: 10%;
+}
+.livres{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.livre{
+    width:calc(100% / 4);
+    margin:10px 20px;
+}
+.card-header,.card-footer{
+    text-align: center;
+}
